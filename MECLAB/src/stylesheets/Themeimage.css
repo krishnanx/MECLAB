@@ -1,0 +1,15 @@
+.main-theme{
+    display: flex;
+    flex-direction: row;
+}
+
+#main-theme-image {
+    width: 100vw;
+    height: 90vh;
+}
+
+@media (max-width: 650px) {
+    #main-theme-image {
+        height: 500px;
+    }
+}
