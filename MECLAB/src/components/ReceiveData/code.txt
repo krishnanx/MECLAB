@@ -1,0 +1,5 @@
+<ul>
+        {name.map(names => (
+        <li key={names.id}>{names.id}</li>
+        ))}
+</ul>
