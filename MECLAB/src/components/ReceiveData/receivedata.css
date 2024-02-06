@@ -1,0 +1,30 @@
+.firsthalfsignin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+
+}
+.signin_div{
+    display:flex ;
+    flex-direction: column;
+    justify-content: center;
+}
+.textbox{
+    display: flex;
+    flex-direction: column;
+    justify-content:center; 
+    height:20rem;
+    width:20rem;
+    
+}
+.Input_Gmail{
+    display:block;
+    color: red;
+}
+.signinbutton{
+    display: flex;
+}
+.Gmail,.Pass{
+    font-size: 20px;
+ }

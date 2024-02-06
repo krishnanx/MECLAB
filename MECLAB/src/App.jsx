@@ -1,10 +1,16 @@
 
 import './App.css'
 import React from 'react'
+import { ListName } from "./components/ReceiveData/receiveData"
+
+
 
 const App = () => {
   return (
-    <div></div>
+    <main>
+      <ListName/>
+
+    </main>
   )
   }
 export default App
