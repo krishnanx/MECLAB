@@ -11,15 +11,18 @@ body{
 }
 
 nav {
+    position:fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background: rgb(1, 39, 81);
-    height: 80px;
+    height: 75px;
     width: 100%;
 }
-
 label.logo {
     color: white;
     font-size: 35px;
-    line-height: 80px;
+    line-height:80px;
     font-weight: bold;
 }
 

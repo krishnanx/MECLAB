@@ -1,6 +1,7 @@
 import React from 'react'
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 import { getAnalytics } from "firebase/analytics";
 import {getFirestore} from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -23,3 +24,6 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 //initializw firestore
 export const db = getFirestore(app)
+// Initialize Firebase Authentication and get a reference to the service
+export const auth = getAuth(app);
+
