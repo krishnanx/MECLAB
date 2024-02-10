@@ -61,24 +61,24 @@ export default function Cards() {
                 <div className="card-image">
                     <img src={image1} alt="" />
                 </div>
-                <h2>TOTAL CONTROL</h2>
-                <p>{Text1}</p>
+                <h2 className="card-text">TOTAL CONTROL</h2>
+                <p className="card-text">{Text1}</p>
                 <button onClick={button_click1}>Read More</button>
             </div>
             <div className="card">
                 <div className="card-image">
                     <img src={image2} alt="" />
                 </div>
-                <h2>FULL PROTECTION</h2>
-                <p>{Text2}</p>
+                <h2 className="card-text">FULL PROTECTION</h2>
+                <p className="card-text">{Text2}</p>
                 <button onClick={button_click2}>Read More</button>
             </div>
             <div className="card">
                 <div className="card-image">
                     <img src={image3} alt="" />
                 </div>
-                <h2>AUTOMATION</h2>
-                <p>{Text3}</p>
+                <h2 className="card-text">AUTOMATION</h2>
+                <p className="card-text">{Text3}</p>
                 <button id='b3' onClick={button_click3}>Read More</button>
             </div>
         </section>
