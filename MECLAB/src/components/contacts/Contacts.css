@@ -9,6 +9,10 @@
     width: 100%;
     border-color: (1, 39, 81)
 }
+.indicons{
+    height: 80px;
+    width: 80px;
+}
 .part-1{
     display: flex;
     flex-direction:row;
@@ -37,6 +41,9 @@
     width:95%;
     height:300px;
 }
+.krishnan_icons{
+    height:100px;
+}
 .krishnan h1{
     color:rgb(1, 39, 81);
     margin-left: 30px;
@@ -58,20 +65,30 @@
 .linkedin{
     width: 40px;
     height:40px;
+    transition: width 0.4s
+}
+.Github{
+    transition: width 0.4s
+}
+.Instagram{
+    transition: width 0.4s
 }
 
 .linkedin:hover {
-    background-color: gray;
+    /*background-color: gray;*/
+    width:50px;
+    height: 50px;
     border-radius: 5px;
 }
 .icons{
     display: flex;
     flex-direction: row;
-    margin-left: 10px;
-    margin-right: 10px;
-    justify-content: center;
+    margin-left: 30px;
+    margin-right: 30px;
+    justify-content:center;
     align-items: center;
     padding-right: 10px;
+    height:100px;
 }
 .icons button{
     margin-left: 10px;

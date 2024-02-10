@@ -1,5 +1,5 @@
 import React from 'react'
-import Krishnan from '../../Images/Krishnan.jpg';
+import Krishnan from '../../Images/Krishnan2.jpg';
 import Amal from '../../Images/amal.jpeg'
 import Sourav from '../../Images/sourav.jpeg'
 import Adinath from '../../Images/adinath.jpg'
@@ -74,9 +74,9 @@ const Contacts = () => {
             </div>
           </div>
           <div className='icons' id="krishnan_icons">
-            <button  onClick={KrishnanLinkedIn}><img src={Linkedin} className='linkedin'></img></button>
-            <button  onClick={KrishnanGithub}><img src={Github} className='linkedin'></img></button>
-            <button  onClick={KrishnanInstagram}><img src={Instagram} className='linkedin'></img></button>
+            <div className='indicons'><button  onClick={KrishnanLinkedIn}><img src={Linkedin} className='linkedin'></img></button></div>
+            <div className='indicons'> <button  onClick={KrishnanGithub}><img src={Github} className='linkedin'></img></button></div>
+            <div className='indicons'><button  onClick={KrishnanInstagram}><img src={Instagram} className='linkedin'></img></button></div>
           
           
           </div>
@@ -97,9 +97,9 @@ const Contacts = () => {
             </div>
           </div>
           <div className='icons' id="krishnan_icons">
-            <button  onClick={AmalLinkedIn}><img src={Linkedin} className='linkedin'></img></button>
-            <button  onClick={AmalGithub}><img src={Github} className='linkedin'></img></button>
-            <button  onClick={AmalInstagram}><img src={Instagram} className='linkedin'></img></button>
+          <div className='indicons'><button  onClick={AmalLinkedIn}><img src={Linkedin} className='linkedin'></img></button></div>
+          <div className='indicons'><button  onClick={AmalGithub}><img src={Github} className='linkedin'></img></button></div>
+          <div className='indicons'> <button  onClick={AmalInstagram}><img src={Instagram} className='linkedin'></img></button></div>
           
           
           </div>
@@ -121,9 +121,9 @@ const Contacts = () => {
               </div>
             </div>
             <div className='icons' id="krishnan_icons">
-              <button  onClick={AdiLinkedIn}><img src={Linkedin} className='linkedin'></img></button>
-              <button  onClick={AdiGithub}><img src={Github} className='linkedin'></img></button>
-              <button  onClick={AdiInstagram}><img src={Instagram} className='linkedin'></img></button>
+            <div className='indicons'><button  onClick={AdiLinkedIn}><img src={Linkedin} className='linkedin'></img></button></div>
+            <div className='indicons'> <button  onClick={AdiGithub}><img src={Github} className='linkedin'></img></button></div>
+            <div className='indicons'> <button  onClick={AdiInstagram}><img src={Instagram} className='linkedin'></img></button></div>
             
             
             </div>
@@ -144,9 +144,9 @@ const Contacts = () => {
               </div>
           </div>
             <div className='icons' id="krishnan_icons">
-              <button  onClick={SouLinkedIn}><img src={Linkedin} className='linkedin'></img></button>
-              <button  onClick={SouGithub}><img src={Github} className='linkedin'></img></button>
-              <button  onClick={SouInstagram}><img src={Instagram} className='linkedin'></img></button>
+            <div className='indicons'><button  onClick={SouLinkedIn}><img src={Linkedin} className='linkedin'></img></button></div>
+            <div className='indicons'> <button  onClick={SouGithub}><img src={Github} className='linkedin'></img></button></div>
+            <div className='indicons'> <button  onClick={SouInstagram}><img src={Instagram} className='linkedin'></img></button></div>
             
             
             </div>

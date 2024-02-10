@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from "react";
-import { collection, getDocs, getDoc } from "firebase/firestore";
+import { collection, getDocs, getDoc, query, where } from "firebase/firestore";
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
@@ -8,6 +8,7 @@ import { getFirestore } from "firebase/firestore";
 import { AuthContext, UserAuth } from "../Context/AuthContext";
 import { doc, setDoc } from "firebase/firestore";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { updateDoc } from "firebase/firestore";
 // import { collection, getDocs } from "firebase/firestore";
 import "firebase/auth";
 import "firebase/database";
@@ -37,7 +38,7 @@ export const db = getFirestore(app);
 // Initialize Firebase Authentication and get a reference to the service
 export const auth = getAuth(app);
 
-export const signIn = async () => {
+export const signUp = async () => {
   //onSigninSuccess = () => {}
   const provider = new GoogleAuthProvider();
   // signInWithPopup(auth, provider);
@@ -55,23 +56,24 @@ export const signIn = async () => {
 
     // const userRef = collection(db,"user")
     const collectionref = collection(db, "users");
-    const snapshot =  doc(db, "users", result.uid);
+    const snapshot = doc(db, "users", result.uid);
     const docSnap = await getDoc(snapshot);
     // Check if the user already exists in Firestore
     // const userSnapshot = await checkIfUser
-    // console.log(snapshot);
+    const userData = {
+      name: result.displayName,
+      first_name: result.displayName.split(" ").shift(),
+      last_name: result.displayName.split(" ").slice(1).join(" "),
+      email: result.email,
+      profilePhoto: result.photoURL,
+      uid: result.uid,
+      // role: myrole,
+    };
+    console.log(snapshot);
     if (docSnap.exists()) {
       // User already exists in Firestore
+      return docSnap.data()
     } else {
-      const userData = {
-        name: result.displayName,
-        first_name: result.displayName.split(" ").shift(),
-        last_name: result.displayName.split(" ").slice(1).join(" "),
-        email: result.email,
-        profilePhoto: result.photoURL,
-        uid: result.uid,
-        // role: myrole,
-      };
       // Add a new document in collection "cities"
       console.log("updated");
       await setDoc(doc(db, "users", result.uid), userData);
@@ -82,7 +84,86 @@ export const signIn = async () => {
     console.log(error);
     alert("Something is wrong, please check network connection");
   }
+
+  /*   ADD INFO INTO DATABASE   */
+  /*const fetchUserProfile = async () => {
+    if (result.uid!==null) {
+      console.log(result.uid);
+      setLoading(true);
+      getUser(currentUser?.uid).then((profile) => {
+        setProfile(profile);
+        // // console.log(snapshot.data())  
+      });
+      if ((profile && profile?.length === 0) || profile === null) {
+        getUser(currentUser?.uid).then((profile) => {
+          setProfile(profile);
+          // // console.log(snapshot.data())
+          if (profile?.role === "Organization"){
+            history.push('/profile')
+          }
+        });
+      }
+      // setProfile(profileUser);
+      setLoading(false);
+
+  }
+  };*/
 };
+
+export const addIp = async (profile, setProfile, ipAddress) => {
+  
+  try {
+    // const result = {}; // You need to set result to some value or obtain it from somewhere
+    const Id = profile.uid;
+    console.log(ipAddress)
+    // useEffect(() => {
+    //   const fetchData = async () => {
+    //     try {
+    //       const docRef = doc(db, "users", Id);
+    //       const docSnapshot = await getDoc(docRef);
+
+    //       if (docSnapshot.exists()) {
+    //         // User already exists in Firestore
+    //         console.log('User already exists:', docSnapshot.data());
+    //       } else {
+    //         console.log('User does not exist in Firestore.');
+    //       }
+    //     } catch (error) {
+    //       console.error('Error fetching document:', error);
+    //     }
+    //   };
+
+    //   fetchData();
+    // }, [Id]);
+
+    const docRef = doc(db, "users", Id);
+
+    // Check if 'ipAddress' field exists in the document
+    const docSnapshot = await getDoc(docRef);
+
+    if (docSnapshot.exists() && docSnapshot.data().ipAddress) {
+      console.log("IP Address already exists:", docSnapshot.data().ipAddress);
+    } else {
+      // If 'ipAddress' does not exist, add it to the document
+      await updateDoc(docRef, {
+        ipAddress: ipAddress,
+        // Other fields you may want to update
+      });
+      console.log("IP Address added to Firestore!");
+    }
+    const updatedData = {
+      ...profile, 
+      ipAddress: ipAddress,
+    };
+    return updatedData;
+  } catch (error) {
+    console.error("Error updating document:", error);
+  }
+};
+
+// Call the functions as neede
+
+/*                           */
 // const CheckIfUserExists = async (field, condition) => {
 //   const collectionref = collection(db, field);
 //   const exists = false;
@@ -102,3 +183,13 @@ export const signIn = async () => {
 //     console.log(err);
 //   }
 // };
+export const getIpAddress = async (uid)=>{
+  // const collectionref = collection(db, "users");
+    const snapshot = doc(db, "users", uid);
+    console.log(uid)
+    // const link=snapshot;
+    const dataSnap = await getDoc(snapshot)
+    const response = dataSnap.data()
+    console.log(response.ipAddress)
+    return response.ipAddress;
+}

@@ -1,4 +1,4 @@
-import { useContext, createContext,useEffect,useState} from "react";
+import { useContext, createContext, useEffect, useState } from "react";
 import {
   getAuth,
   GoogleAuthProvider,
@@ -12,14 +12,16 @@ import { auth } from "../library/Firebase";
 export const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
-  const[user, setUser] = useState(null);
+  const [user, setUser] = useState(null);
+  const [profile, setProfile] = useState({});
+
   // const googleSignIn = () => {
   //   const provider = new GoogleAuthProvider();
   //   signInWithPopup(auth, provider);
   // };
-  const logOut = () =>{
-    signOut(auth)
-  }
+  const logOut = () => {
+    signOut(auth);
+  };
   // useEffect(()=>{
   //   const unsubscribe = onAuthStateChanged(auth,(currentUser)=> {
   //     setUser(currentUser);
@@ -31,16 +33,18 @@ export const AuthContextProvider = ({ children }) => {
   //   const provider = new GoogleAuthProvider();
   //   signInWithPopup(auth, provider);
   // };
-  useEffect(()=>{
-    const unsubscribe = onAuthStateChanged(auth,(currentUser)=> {
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       //console.log('user',currentUser)
     });
-    return()=> {unsubscribe();};
-  },[]);
+    return () => {
+      unsubscribe();
+    };
+  }, []);
 
   return (
-    <AuthContext.Provider value={{ logOut, user}}>
+    <AuthContext.Provider value={{ logOut, user, profile, setProfile }}>
       {children}
     </AuthContext.Provider>
   );

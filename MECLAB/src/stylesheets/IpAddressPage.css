@@ -1,0 +1,22 @@
+.ipaddresspage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: bisque;
+}
+.welcomemsg{
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:500px;
+    height:100px;
+    border: none;
+    border-color: black;
+}
+.welcomemsg h1{
+    font-family:Roboto Mono;
+    background-color: bisque;
+
+}
