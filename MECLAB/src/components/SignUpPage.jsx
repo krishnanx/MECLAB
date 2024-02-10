@@ -3,9 +3,7 @@ import React from 'react'
 const SignUpPage = () => {
   return (
     <div>
-        <input type='text'>
-            
-        </input>
+        <p>THIS WILL WORK</p>
     </div>
   )
 }

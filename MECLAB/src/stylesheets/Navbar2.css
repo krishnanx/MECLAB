@@ -4,6 +4,7 @@
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
+    background-color: aliceblue;
 }
 
 body{
@@ -19,8 +20,17 @@ nav {
     height: 75px;
     width: 100%;
 }
+.nav-buttons{
+    background-color: rgb(1, 39, 81);
+}
+.logo{
+    background-color: rgb(1, 39, 81) ;
+    width:75px;
+    height:65px;
+
+}
 label.logo {
-    color: white;
+    color:rgb(1, 39, 81);
     font-size: 35px;
     line-height:80px;
     font-weight: bold;

@@ -18,7 +18,7 @@ body {
 }
 
 .card {
-    background: white;
+    background: rgb(1, 39, 81);
     width: 270px;
     height: fit-content;
     margin: 10px;
@@ -30,15 +30,19 @@ body {
 
 .card h2 {
     margin-top: 40px;
+    background-color: rgb(1, 39, 81);
+    color:bisque;
 }
 
 .card p {
     margin-top: 20px;
+    background-color: rgb(1, 39, 81);
+    color:bisque
 }
 
 .card-image {
     border-radius: 10%;
-    background-color: aqua;
+    background-color: rgb(1, 39, 81)a;
     height: 150px;
     margin-bottom: 15px;
 }
@@ -56,13 +60,14 @@ body {
 .card button {
     margin-top: 50px;
     width: 100px;
+    margin-bottom: 10px;
     align-self: center;
     height: 30px;
     border-width: 2px;
-    border-radius: 5px;
+    border-radius:20px;
     font-weight: bold;
     background-color: black;
-    color: white;
+    color:bisque;
     cursor: pointer;
 }
 

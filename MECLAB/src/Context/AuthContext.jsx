@@ -13,23 +13,34 @@ export const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
   const[user, setUser] = useState(null);
-  const googleSignIn = () => {
-    const provider = new GoogleAuthProvider();
-    signInWithPopup(auth, provider);
-  };
+  // const googleSignIn = () => {
+  //   const provider = new GoogleAuthProvider();
+  //   signInWithPopup(auth, provider);
+  // };
   const logOut = () =>{
     signOut(auth)
   }
+  // useEffect(()=>{
+  //   const unsubscribe = onAuthStateChanged(auth,(currentUser)=> {
+  //     setUser(currentUser);
+  //     //console.log('user',currentUser)
+  //   });
+  //   return()=> {unsubscribe();};
+  // },[]);
+  // const googleSignUp = () => {
+  //   const provider = new GoogleAuthProvider();
+  //   signInWithPopup(auth, provider);
+  // };
   useEffect(()=>{
     const unsubscribe = onAuthStateChanged(auth,(currentUser)=> {
       setUser(currentUser);
-      console.log('user',currentUser)
+      //console.log('user',currentUser)
     });
     return()=> {unsubscribe();};
   },[]);
 
   return (
-    <AuthContext.Provider value={{ googleSignIn,logOut, user}}>
+    <AuthContext.Provider value={{ logOut, user}}>
       {children}
     </AuthContext.Provider>
   );

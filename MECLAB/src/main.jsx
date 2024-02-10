@@ -7,6 +7,7 @@ import Cards from "./components/Cards.jsx"; //The three cards that contains feat
 import { BrowserRouter } from "react-router-dom";
 import { AuthContextProvider } from "./Context/AuthContext";
 import App from "./App.jsx";
+import SignUpPage from "./components/SignUpPage.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -16,6 +17,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         {/* <signInPage/> */}
         {/* <Themeimage /> */}
         {/* <Cards /> */}
+      
         <App/>
         </React.StrictMode>
     </AuthContextProvider>

@@ -1,7 +1,8 @@
 import "./App.css";
 import "./stylesheets/Button.css" 
-import React, { useState } from "react";
-// import { ListName } from "./components/ReceiveData/receiveData";
+import "./components/contacts/Contacts.css"
+import React from "react";
+// import { ListName } from "./library/Firebase.js";
 //import SignIn from "./components/SignIn/SignIn.jsx";
 import { LoginContext } from "./Context/LoginContext.jsx";
 //import { Route } from 'lucide-react'
@@ -19,19 +20,18 @@ import SignUpPage from "./components/SignUpPage.jsx";
 import Navbar2 from "./components/Navbar2.jsx";
 
 const App = () => {
-  const [data, setData] = useState(null);
-  const [pass, setPass] = useState(null);
-  const [print, setPrint] = useState(false);
-  const [name, setName] = useState([]);
+  
+  
 
   return (
     <main>
       <div>
-        <Navbar2/>
+        {/* <ListName/> */}
         <Routes>
           <Route path="/" element={<Landing />} />
-          <Route path="/signinpage" index element={<SignInPage />} />
+          <Route path="/signinpage" index element={<SignInPage/>} />
           <Route path="/SignUpPage" index element={<SignUpPage/>}/>
+  
           {/* <Route path="/signinpage" element={<SignInPage />} /> */}
         </Routes>
       </div>
