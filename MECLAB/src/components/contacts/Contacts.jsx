@@ -6,6 +6,8 @@ import Adinath from '../../Images/adinath.jpg'
 import Linkedin from "../../Icons/Linkedin.svg"
 import Github from "../../Icons/github.svg"
 import Instagram from "../../Icons/Instagram.svg"
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
 //import {useNavigate,Navigate } from 'react-router-dom';
 // <FontAwesomeIcon icon="fa-brands fa-linkedin" />
 const Contacts = () => {
@@ -163,3 +165,38 @@ const Contacts = () => {
 }
 
 export default Contacts
+
+
+
+/*window.addEventListener("DOMContentLoaded" , ()=>{
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.to('.part-1' , {
+  scrollTrigger:'.part-1',
+  opacity: 0,
+  duration: 3
+})
+});*/
+
+window.addEventListener("load" ,()=>{
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.from('.part-1' , {
+  scrollTrigger:{
+    trigger:".part-1",
+    toggleActions: "restart none none reverse"
+  },
+  opacity: 0,
+  duration: 2
+})
+});
+
+window.addEventListener("load" ,()=>{
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.from('.part-2' , {
+  scrollTrigger:{
+    trigger: ".part-2",
+    toggleActions: "restart none none reverse"
+  },
+  opacity: 0,
+  duration: 2
+})
+});

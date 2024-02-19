@@ -8,6 +8,8 @@ import { useNavigate } from "react-router-dom";
 // import signIn from "./Trial"
 import SignUpPage from "./SignUpPage";
 import { signUp, addIp } from "../library/Firebase";
+import {gsap} from "gsap";
+
 let flag = 0;
 
 export default function Navbar2() {
@@ -97,9 +99,12 @@ export default function Navbar2() {
   const GoHome = () => {
     navigate("/");
   };
+
+
+  
   return (
     <div>
-      <nav>
+      <nav className="main-nav-bar">
         <a className="menu-bttn" href="#" onClick={menu_click}>
           <AlignJustify color="rgb(1, 39, 81)" />
         </a>
@@ -128,12 +133,14 @@ export default function Navbar2() {
               Sign in{" "}
             </button>
           )}
-          <button className="button-80" id="contactus" >
-              Contact Us
-            </button>
           
         </div>
       </nav>
     </div>
   );
 }
+
+
+
+
+
