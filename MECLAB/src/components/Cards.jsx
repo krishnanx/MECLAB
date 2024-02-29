@@ -3,6 +3,8 @@ import "../stylesheets/Cards.css"
 import image1 from '../assets/images/icons/easy.jpg';
 import image2 from '../assets/images/icons/security2.png';
 import image3 from '../assets/images/icons/automation.jpg';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
 
 
 let flag1 = 0;
@@ -86,3 +88,31 @@ export default function Cards() {
     </div>
   )
 }
+
+
+window.addEventListener("load" , ()=>{
+    gsap.registerPlugin(ScrollTrigger)
+    gsap.from(".container",{
+        scrollTrigger: {
+            trigger: ".container" ,
+            toggleActions:"play none none reverse" ,
+            start: "70px 80%" ,
+            scrub:false
+        },
+        x: -3000 ,
+        duration:1
+    })
+})
+
+window.addEventListener("DOMContentLoaded" , ()=>{
+    gsap.registerPlugin(ScrollTrigger)
+    gsap.from(".container",{
+        scrollTrigger: {
+            trigger: ".container" ,
+            toggleActions:"play none none reverse" ,
+            start: "70px 80%" ,
+        },
+        x: -3000 ,
+        duration:1
+    })
+})

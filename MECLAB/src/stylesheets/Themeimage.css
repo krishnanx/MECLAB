@@ -1,3 +1,4 @@
+
 .main-theme{
     display: flex;
     flex-direction: row;
@@ -8,6 +9,40 @@
     width:100%;
     margin-top:75px;
     height: 90vh;
+}
+.text1{
+    position:absolute ;
+    right: 400px;
+    top: 350px;
+    font-family: calibti;
+    font-weight:5px;
+    background-color: transparent;
+    width: 250px;
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.text1 h1{
+    background-color: transparent;
+}
+
+.text1 h2 {
+    background-color: transparent;
+    font-size: 15px;
+    font-weight: light;
+}
+.animation-text {
+    position: absolute;
+    right: 350px;
+    top: 250px;
+    width: 300px;
+    height: 50px;
+    background-color: transparent;
+    font-family: sans-serif;
+    font-size: 30px;
+    font-weight: lighter;
+    font-style: italic;
+    animation: "typer" 5 ease-in-out 0 infinite;
 }
 
 @media (max-width: 650px) {
