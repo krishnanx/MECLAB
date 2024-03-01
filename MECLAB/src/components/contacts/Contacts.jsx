@@ -61,7 +61,7 @@ const Contacts = () => {
     <div className='contacts'>
       <hr />
       <div>
-        <h1>CONTACT US</h1>
+        <h1 id="contact-text">CONTACT US</h1>
       </div>
       <div className='part-1'>
         <div className='contact-1'>
@@ -168,26 +168,32 @@ export default Contacts
 
 
 
-/*window.addEventListener("DOMContentLoaded" , ()=>{
+window.addEventListener("load" , ()=>{
   gsap.registerPlugin(ScrollTrigger);
-  gsap.to('.part-1' , {
-  scrollTrigger:'.part-1',
+  gsap.from('#contact-text' , {
+  scrollTrigger:{
+    trigger:'#contact-text',
+    toggleActions: "restart none none reverse"
+  },
   opacity: 0,
-  duration: 3
+  duration: 1
 })
-});*/
+});
 
 window.addEventListener("load" ,()=>{
   gsap.registerPlugin(ScrollTrigger);
   gsap.from('.part-1' , {
   scrollTrigger:{
     trigger:".part-1",
-    toggleActions: "restart none none reverse"
+    toggleActions: "restart none none reverse",
+    //markers:true
   },
   opacity: 0,
-  duration: 2
+  y: 100,
+  duration: .5
 })
 });
+
 
 window.addEventListener("load" ,()=>{
   gsap.registerPlugin(ScrollTrigger);
@@ -197,6 +203,7 @@ window.addEventListener("load" ,()=>{
     toggleActions: "restart none none reverse"
   },
   opacity: 0,
-  duration: 2
+  y: 100 ,
+  duration: .5
 })
 });

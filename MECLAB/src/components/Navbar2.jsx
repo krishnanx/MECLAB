@@ -1,6 +1,7 @@
 import "../stylesheets/Navbar2.css";
 import Logo from "../assets/images/logo2.png";
 import { AlignJustify } from "lucide-react";
+import {ArrowUp} from 'lucide-react';
 import React, { useContext, useEffect, useState } from "react";
 import { GoogleButton } from "react-google-button";
 import { AuthContext, UserAuth } from "../Context/AuthContext";
@@ -9,6 +10,15 @@ import { useNavigate } from "react-router-dom";
 import SignUpPage from "./SignUpPage";
 import { signUp, addIp } from "../library/Firebase";
 import {gsap} from "gsap";
+import { ScrollTrigger } from 'gsap/all';
+
+
+const scrollup =()=> {
+  window.scrollTo({
+    top:0 , 
+    behavior: "smooth"
+  })
+}
 
 let flag = 0;
 
@@ -100,6 +110,8 @@ export default function Navbar2() {
     navigate("/");
   };
 
+  
+
 
   
   return (
@@ -133,12 +145,51 @@ export default function Navbar2() {
               Sign in{" "}
             </button>
           )}
+
+          <div className="pttb" onClick={scrollup}>
+            <ArrowUp className="push" />
+          </div>
           
         </div>
       </nav>
     </div>
   );
 }
+
+
+
+// window.addEventListener("DOMContentLoaded" , ()=>{
+
+// window.addEventListener("load" , ()=>{
+//   window.addEventListener("scroll" , ()=>{
+//     let Yaxis = window.scrollY;
+//     console.log(Yaxis);
+//     if (Yaxis>=200) {
+//       console.log("flag");
+
+//       bttn.style.opacity = '1';
+//     }
+//   })
+// })
+
+// })
+
+
+window.addEventListener("load" , ()=>{
+  gsap.registerPlugin(ScrollTrigger)
+  gsap.to(".pttb",{
+      scrollTrigger: {
+          trigger: ".pttb" ,
+          toggleActions:"play none none reverse" ,
+          start: "20px 80%" 
+      },
+      opacity:1 ,
+      duration: .2
+  })
+})
+
+
+
 
 
 

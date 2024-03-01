@@ -1,25 +1,20 @@
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    /*background-color: rgb(215,158,45,255);*/
-    background-color: linear-gradient(to right, red , yellow);
-}
+
 
 .container {
     display: flex;
     flex-direction: row;
-
+    height: 100vh;
+    width: 100vw;
     justify-content:space-around;
     flex-wrap: wrap;
-    margin-top: 100px;
+    background:linear-gradient(rgb(111, 40, 8) 0% , rgb(253, 240, 112) 70% );
 }
 
 .card {
     background: rgb(1, 39, 81);
     width: 270px;
     height: fit-content;
-    margin: 10px;
+    margin: 50px 10px 10px 10px;
     text-align: center;
     border-radius: 8%;
     display: flex;
@@ -42,6 +37,7 @@
     border-radius: 10%;
     height: 150px;
     margin-bottom: 15px;
+    overflow-y: hidden;
 }
 
 .card-image img {
@@ -80,3 +76,98 @@
 #b3 {
     margin-top: 30px;
 }
+
+.container2 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 100px;
+    width: 100vw;
+    background:linear-gradient(rgb(253, 240, 112) , rgb(255,228,196,255));
+    overflow-y: hidden;
+}
+
+.box {
+    background: rgb(1, 39, 81);
+    height: 400px;
+    width: 600px;
+    border-radius: 25px;
+    border: solid rgb(0, 183, 255) 3px;
+    display: flex;
+    justify-content: space-between;
+    overflow-y: hidden;
+
+}
+
+.txt {
+    text-align: center;
+    height: 400px;
+    width: 50%;
+    color: white;
+    overflow-y: hidden;
+    padding-top: 50px;
+    overflow-y: hidden;
+}
+
+
+
+.img {
+    border-radius: 26px 40% 40% 26px;
+    height: 100%;
+    width: 50%;
+    background: white;
+    overflow-y: hidden;
+}
+
+#box2 .txt{
+    text-align: center;
+    height: 400px;
+    width: 50%;
+    color: white;
+    overflow-y: hidden;
+    padding-top: 50px;
+}
+
+#box2 .img {
+    border-radius: 40% 26px 26px 40%;
+    height: 100%;
+    width: 50%;
+    background: white;
+}
+
+.conclusion-text {
+    width: 70vw;
+    height: 300px;
+    font-size: large;
+    overflow-y: hidden;
+}
+
+.tools {
+    display: flex;
+    justify-content: space-around;
+    width: 100vw;
+    height: 300px;
+    overflow-y: hidden;
+}
+
+#tool-img {
+    width: 33.33%;
+    height: auto;
+    background: red;
+    overflow-y: hidden;
+
+}
+
+#tool-img img{
+    width: 100%;
+    overflow-y: hidden;
+}
+
+.tool2 img{
+    height: 100%;
+}
+
+
+
+
+  

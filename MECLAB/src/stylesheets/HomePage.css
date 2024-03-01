@@ -1,3 +1,15 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    /*background-color: rgb(215,158,45,255);*/
+    background: transparent;
+    overflow-x: hidden;
+    
+}
+
+
+
 .Main{
     display: flex;
     flex-direction: column;
