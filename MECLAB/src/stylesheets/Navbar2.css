@@ -4,7 +4,8 @@
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
-    background-color:bisque;}
+    background-color:bisque;
+}
 
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -16,16 +17,24 @@ nav {
     justify-content: space-around;
     align-items: center;
     background: rgb(1, 39, 81);
-    height: 75px;
-    width: 100%;
+    height: 80px;
+    width: 100vw;
+    z-index: 1000;
+    overflow-y: hidden;
 }
 .nav-buttons{
+    padding-left: 5px;
+    padding-top: 1px;
+    padding-bottom: 1px;
     background-color: rgb(1, 39, 81);
+    overflow-y: hidden;
+    height: 20px;
 }
 .logo{
     background-color: rgb(1, 39, 81) ;
     width:75px;
     height:65px;
+    overflow-y: hidden;
 
 }
 label.logo {
@@ -35,33 +44,16 @@ label.logo {
     font-weight: bold;
 }
 
-nav ul {
-    float: right;
-    margin-right: 20px;
-}
-
-nav ul li {
-    display: inline-block;
-    line-height: 80px;
-    margin: 0 5px;
-}
-
-nav ul li a {
-    color: white;
-    font-size: 17px;
-    padding: 7px 13px;
-    border-radius: 3px;
-}
-
-a.active , a:hover {
-    background: #1b9bff;
-    transition: .5s;
-}
 
 .menu-bttn {
     float: right;
     margin-top: 30px;
     display: none;
+}
+
+
+.button-80 {
+    overflow-y: hidden;
 }
 
 @media(max-width: 650px) {
@@ -90,5 +82,23 @@ a.active , a:hover {
         background: none;
         color: #0082e6;
     }
+}
+
+
+.pttb {
+    align-items:center;
+    justify-content: center;
+    position: fixed;
+    bottom: 10px;
+    right: 5px;
+    color: white;
+    border: solid 2px white;
+    background-color: rgb(1, 39, 81);
+    opacity: 0;
+}
+
+.pttb:hover {
+    border: solid 1px ;
+    scale: 1.1;
 }
 

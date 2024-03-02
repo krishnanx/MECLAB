@@ -6,7 +6,12 @@ import Adinath from '../../Images/adinath.jpg'
 import Linkedin from "../../Icons/Linkedin.svg"
 import Github from "../../Icons/github.svg"
 import Instagram from "../../Icons/Instagram.svg"
+<<<<<<< HEAD
 import TargetDivRef from "../TargetDivRef"
+=======
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
+>>>>>>> ca01b62523cb0d260e47124a1e9909c7d72061f5
 //import {useNavigate,Navigate } from 'react-router-dom';
 // <FontAwesomeIcon icon="fa-brands fa-linkedin" />
 const Contacts = () => {
@@ -61,7 +66,7 @@ const Contacts = () => {
     <div className='contacts' /*ref={targetDivRef}*/>
       <hr />
       <div>
-        <h1>CONTACT US</h1>
+        <h1 id="contact-text">CONTACT US</h1>
       </div>
       <div className='part-1'>
         <div className='contact-1'>
@@ -165,3 +170,45 @@ const Contacts = () => {
 }
 
 export default Contacts
+
+
+
+window.addEventListener("load" , ()=>{
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.from('#contact-text' , {
+  scrollTrigger:{
+    trigger:'#contact-text',
+    toggleActions: "restart none none reverse"
+  },
+  opacity: 0,
+  duration: 1
+})
+});
+
+window.addEventListener("load" ,()=>{
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.from('.part-1' , {
+  scrollTrigger:{
+    trigger:".part-1",
+    toggleActions: "restart none none reverse",
+    //markers:true
+  },
+  opacity: 0,
+  y: 100,
+  duration: .5
+})
+});
+
+
+window.addEventListener("load" ,()=>{
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.from('.part-2' , {
+  scrollTrigger:{
+    trigger: ".part-2",
+    toggleActions: "restart none none reverse"
+  },
+  opacity: 0,
+  y: 100 ,
+  duration: .5
+})
+});

@@ -1,7 +1,12 @@
 import "../stylesheets/Navbar2.css";
 import Logo from "../assets/images/logo2.png";
 import { AlignJustify } from "lucide-react";
+<<<<<<< HEAD
 import React, { useContext, useEffect, useState,useRef} from "react";
+=======
+import {ArrowUp} from 'lucide-react';
+import React, { useContext, useEffect, useState } from "react";
+>>>>>>> ca01b62523cb0d260e47124a1e9909c7d72061f5
 import { GoogleButton } from "react-google-button";
 import { AuthContext, UserAuth } from "../Context/AuthContext";
 import { useNavigate } from "react-router-dom";
@@ -9,6 +14,17 @@ import TargetDivRef from "../components/TargetDivRef"
 // import signIn from "./Trial"
 import SignUpPage from "./SignUpPage";
 import { signUp, addIp } from "../library/Firebase";
+import {gsap} from "gsap";
+import { ScrollTrigger } from 'gsap/all';
+
+
+const scrollup =()=> {
+  window.scrollTo({
+    top:0 , 
+    behavior: "smooth"
+  })
+}
+
 let flag = 0;
 
 export default function Navbar2() {
@@ -100,14 +116,21 @@ export default function Navbar2() {
     navigate("/");
   };
 
+<<<<<<< HEAD
     /*const handleClick = () => {
       if (targetDivRef.current) {
         targetDivRef.current.scrollIntoView({ behavior: 'smooth' });
       }
     };*/
+=======
+  
+
+
+  
+>>>>>>> ca01b62523cb0d260e47124a1e9909c7d72061f5
   return (
     <div>
-      <nav>
+      <nav className="main-nav-bar">
         <a className="menu-bttn" href="#" onClick={menu_click}>
           <AlignJustify color="rgb(1, 39, 81)" />
         </a>
@@ -136,12 +159,57 @@ export default function Navbar2() {
               Sign in{" "}
             </button>
           )}
-          <button className="button-80" id="contactus" >
-              Contact Us
-            </button>
+
+          <div className="pttb" onClick={scrollup}>
+            <ArrowUp className="push" />
+          </div>
           
         </div>
       </nav>
     </div>
   );
+<<<<<<< HEAD
 }
+=======
+}
+
+
+
+// window.addEventListener("DOMContentLoaded" , ()=>{
+
+// window.addEventListener("load" , ()=>{
+//   window.addEventListener("scroll" , ()=>{
+//     let Yaxis = window.scrollY;
+//     console.log(Yaxis);
+//     if (Yaxis>=200) {
+//       console.log("flag");
+
+//       bttn.style.opacity = '1';
+//     }
+//   })
+// })
+
+// })
+
+
+window.addEventListener("load" , ()=>{
+  gsap.registerPlugin(ScrollTrigger)
+  gsap.to(".pttb",{
+      scrollTrigger: {
+          trigger: ".pttb" ,
+          toggleActions:"play none none reverse" ,
+          start: "20px 80%" 
+      },
+      opacity:1 ,
+      duration: .2
+  })
+})
+
+
+
+
+
+
+
+
+>>>>>>> ca01b62523cb0d260e47124a1e9909c7d72061f5
