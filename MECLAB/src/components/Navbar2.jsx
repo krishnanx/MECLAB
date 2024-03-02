@@ -1,16 +1,18 @@
 import "../stylesheets/Navbar2.css";
 import Logo from "../assets/images/logo2.png";
 import { AlignJustify } from "lucide-react";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState,useRef} from "react";
 import { GoogleButton } from "react-google-button";
 import { AuthContext, UserAuth } from "../Context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import TargetDivRef from "../components/TargetDivRef"
 // import signIn from "./Trial"
 import SignUpPage from "./SignUpPage";
 import { signUp, addIp } from "../library/Firebase";
 let flag = 0;
 
 export default function Navbar2() {
+  const targetDivRef = TargetDivRef();
   const { user, logOut, profile, setProfile } = UserAuth();
   //console.log(user)
   /*                                               */
@@ -97,6 +99,12 @@ export default function Navbar2() {
   const GoHome = () => {
     navigate("/");
   };
+
+    /*const handleClick = () => {
+      if (targetDivRef.current) {
+        targetDivRef.current.scrollIntoView({ behavior: 'smooth' });
+      }
+    };*/
   return (
     <div>
       <nav>

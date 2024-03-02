@@ -6,9 +6,11 @@ import Adinath from '../../Images/adinath.jpg'
 import Linkedin from "../../Icons/Linkedin.svg"
 import Github from "../../Icons/github.svg"
 import Instagram from "../../Icons/Instagram.svg"
+import TargetDivRef from "../TargetDivRef"
 //import {useNavigate,Navigate } from 'react-router-dom';
 // <FontAwesomeIcon icon="fa-brands fa-linkedin" />
 const Contacts = () => {
+  //const targetDivRef = TargetDivRef();
   /*KRISHNAN*/
   const KrishnanLinkedIn = () => {
     window.location.href = 'https://www.linkedin.com/in/krishnan-e-7a1112202/';
@@ -56,7 +58,7 @@ const Contacts = () => {
 
   /*         */
   return (
-    <div className='contacts'>
+    <div className='contacts' /*ref={targetDivRef}*/>
       <hr />
       <div>
         <h1>CONTACT US</h1>

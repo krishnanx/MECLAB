@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react"
+import Logo from "../assets/images/logo2.png";
 // import { collection, getDocs, getDoc, query, where } from "firebase/firestore";
 import React from 'react'
 import { getIpAddress } from "../library/Firebase";
 import { UserAuth } from "../Context/AuthContext";
 import { useNavigate } from "react-router-dom";
 const HomePage = () => {
+    const {logOut} = UserAuth();
     const navigate = useNavigate();
     const [iframeError, setIframeError] = useState(false);
     const {profile} = UserAuth();
@@ -28,13 +30,25 @@ const HomePage = () => {
         // setIpAddress(response)
       },[profile])
       console.log(ipAddress)
-const GoHome = () =>{
-  navigate("/")
-}
+    const handleSignOut = async () => {
+      try {
+        await logOut();
+        navigate("/")
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
   return (
     <div className="Main">
       <nav className="navbar3">
-        <button onClick={GoHome} className="Gohome"></button>
+            <label className="logo">
+                <img src={Logo} alt="" height="65" width="75" />
+              </label>
+              <button onClick={handleSignOut} className="button-80" id="signout">
+                Log out
+              </button>
+           
       </nav>
       <div>
         <div className='Homepage'>

@@ -22,6 +22,7 @@ import SignUpPage from "./components/SignUpPage.jsx";
 import Navbar2 from "./components/Navbar2.jsx";
 import IpAddressPage from "./components/IpAddressPage.jsx";
 import HomePage from "./components/HomePage.jsx";
+import Protected from "./components/Protected.jsx";
 
 // import HomePage from "./components/HomePage.jsx";
 
@@ -42,7 +43,6 @@ const App = () => {
           <Route path="/SignUpPage" index element={<SignUpPage/>}/>
           <Route path='/SignUpWithIp' index element={<IpAddressPage/>}/>
           <Route path='/HomePage' index element={<HomePage/>}/>
-  
           {/* <Route path="/signinpage" element={<SignInPage />} /> */}
         </Routes>
       </div>
