@@ -6,12 +6,9 @@ import Adinath from '../../Images/adinath.jpg'
 import Linkedin from "../../Icons/Linkedin.svg"
 import Github from "../../Icons/github.svg"
 import Instagram from "../../Icons/Instagram.svg"
-<<<<<<< HEAD
 import TargetDivRef from "../TargetDivRef"
-=======
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
->>>>>>> ca01b62523cb0d260e47124a1e9909c7d72061f5
 //import {useNavigate,Navigate } from 'react-router-dom';
 // <FontAwesomeIcon icon="fa-brands fa-linkedin" />
 const Contacts = () => {
