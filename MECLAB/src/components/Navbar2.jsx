@@ -1,12 +1,7 @@
 import "../stylesheets/Navbar2.css";
 import Logo from "../assets/images/logo2.png";
 import { AlignJustify } from "lucide-react";
-<<<<<<< HEAD
 import React, { useContext, useEffect, useState,useRef} from "react";
-=======
-import {ArrowUp} from 'lucide-react';
-import React, { useContext, useEffect, useState } from "react";
->>>>>>> ca01b62523cb0d260e47124a1e9909c7d72061f5
 import { GoogleButton } from "react-google-button";
 import { AuthContext, UserAuth } from "../Context/AuthContext";
 import { useNavigate } from "react-router-dom";
@@ -16,7 +11,7 @@ import SignUpPage from "./SignUpPage";
 import { signUp, addIp } from "../library/Firebase";
 import {gsap} from "gsap";
 import { ScrollTrigger } from 'gsap/all';
-
+import { ArrowUp } from "lucide-react";
 
 const scrollup =()=> {
   window.scrollTo({
@@ -116,18 +111,11 @@ export default function Navbar2() {
     navigate("/");
   };
 
-<<<<<<< HEAD
     /*const handleClick = () => {
       if (targetDivRef.current) {
         targetDivRef.current.scrollIntoView({ behavior: 'smooth' });
       }
     };*/
-=======
-  
-
-
-  
->>>>>>> ca01b62523cb0d260e47124a1e9909c7d72061f5
   return (
     <div>
       <nav className="main-nav-bar">
@@ -168,9 +156,7 @@ export default function Navbar2() {
       </nav>
     </div>
   );
-<<<<<<< HEAD
-}
-=======
+
 }
 
 
@@ -212,4 +198,3 @@ window.addEventListener("load" , ()=>{
 
 
 
->>>>>>> ca01b62523cb0d260e47124a1e9909c7d72061f5
